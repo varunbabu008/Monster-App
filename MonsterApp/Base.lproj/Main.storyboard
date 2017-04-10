@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ke5-95-dSl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Monster APP-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Monster APP" id="BYZ-38-t0r" customClass="ViewController" customModule="MonsterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLi-B8-XZJ">
+                                <rect key="frame" x="16" y="71" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3n-H5-upN">
+                                <rect key="frame" x="16" y="109" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Species:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbR-3O-mQd">
+                                <rect key="frame" x="16" y="152" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attack Power:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyU-un-Wwe">
+                                <rect key="frame" x="16" y="193" width="106" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzw-h8-GMo">
+                                <rect key="frame" x="16" y="234" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xm8-wY-wWZ">
+                                <rect key="frame" x="210" y="71" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uft-If-KrR">
+                                <rect key="frame" x="210" y="109" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3k-1k-T6S">
+                                <rect key="frame" x="210" y="149" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-gX-OnL">
+                                <rect key="frame" x="210" y="193" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ns0-zV-3TP">
+                                <rect key="frame" x="210" y="231" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B66-n2-GNY">
+                                <rect key="frame" x="31" y="490" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="UpdateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVh-Hb-Jev"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Aw-iT-dvT">
+                                <rect key="frame" x="16" y="298" width="343" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-JK-NqB">
+                                <rect key="frame" x="270" y="490" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Qh-c9-pRq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5pX-Cn-GjG"/>
+                    <connections>
+                        <outlet property="MonsterAge" destination="uft-If-KrR" id="PTN-GW-vu9"/>
+                        <outlet property="MonsterAttack" destination="ns0-zV-3TP" id="x9r-JZ-VGq"/>
+                        <outlet property="MonsterHealth" destination="ns0-zV-3TP" id="LlZ-c3-1RJ"/>
+                        <outlet property="MonsterName" destination="xm8-wY-wWZ" id="qz5-ND-ebs"/>
+                        <outlet property="MonsterSpecies" destination="f3k-1k-T6S" id="Tp2-xh-bbL"/>
+                        <outlet property="displayLabel" destination="5Aw-iT-dvT" id="qUB-oE-wp7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3016.8000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--Darwins Encyclopedia-->
+        <scene sceneID="5QC-OE-jdH">
+            <objects>
+                <viewController id="NA7-nF-Kr9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k7f-8H-Fz7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jvs-yM-kaC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dgg-yN-hMx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWP-mz-j2j">
+                                <rect key="frame" x="128" y="271" width="119" height="30"/>
+                                <state key="normal" title="Create a Monster"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="createMonster" id="Ink-pJ-6UZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-XY-s00">
+                                <rect key="frame" x="133" y="320" width="109" height="30"/>
+                                <state key="normal" title="Search Monster"/>
+                                <connections>
+                                    <segue destination="Osg-SW-fUV" kind="show" identifier="searchMonster" id="zBs-YF-cBe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-IJ-UkO">
+                                <rect key="frame" x="140" y="365" width="94" height="30"/>
+                                <state key="normal" title="View Monster"/>
+                                <connections>
+                                    <segue destination="NOb-Xn-otk" kind="show" identifier="viewMonster" id="UKm-SU-lSD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bEY-XY-s00" firstAttribute="centerX" secondItem="5Tj-IJ-UkO" secondAttribute="centerX" id="1Tk-t8-N8d"/>
+                            <constraint firstItem="5Tj-IJ-UkO" firstAttribute="top" secondItem="bEY-XY-s00" secondAttribute="bottom" constant="15" id="LzC-Jk-JEH"/>
+                            <constraint firstItem="gWP-mz-j2j" firstAttribute="centerX" secondItem="bEY-XY-s00" secondAttribute="centerX" id="M3F-F9-fpS"/>
+                            <constraint firstItem="gWP-mz-j2j" firstAttribute="top" secondItem="k7f-8H-Fz7" secondAttribute="bottom" constant="207" id="cHd-IC-mnD"/>
+                            <constraint firstItem="5Tj-IJ-UkO" firstAttribute="centerX" secondItem="Dgg-yN-hMx" secondAttribute="centerX" id="qV7-w1-dC5"/>
+                            <constraint firstItem="bEY-XY-s00" firstAttribute="top" secondItem="gWP-mz-j2j" secondAttribute="bottom" constant="19" id="sjw-aX-1Pt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Darwins Encyclopedia" id="NhA-lO-Krp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1e-xS-vnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2170" y="139"/>
+        </scene>
+        <!--Add/Edit-->
+        <scene sceneID="aBH-zr-JM3">
+            <objects>
+                <viewController id="e3v-Ya-RAy" customClass="ItemDetailsVCViewController" customModule="MonsterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="33u-4E-3uy"/>
+                        <viewControllerLayoutGuide type="bottom" id="H9P-x1-OqQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i4W-PR-NNn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-3r-U8O">
+                                <rect key="frame" x="103" y="92" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Species" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tH9-Ac-SrO">
+                                <rect key="frame" x="103" y="142" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H6T-Hn-Nf4">
+                                <rect key="frame" x="103" y="191" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="health" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VO4-9c-Suk">
+                                <rect key="frame" x="103" y="239" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="attack" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JoM-dT-v9a">
+                                <rect key="frame" x="103" y="284" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-ZS-PEl">
+                                <rect key="frame" x="140" y="426" width="125" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Save Monster">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="e3v-Ya-RAy" eventType="touchUpInside" id="3wr-vO-Yj3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add/Edit" id="WoV-qb-tep">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CcQ-tn-f7b">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ageField" destination="H6T-Hn-Nf4" id="fw5-ye-zEB"/>
+                        <outlet property="attackField" destination="JoM-dT-v9a" id="Mlt-V5-bQE"/>
+                        <outlet property="healthField" destination="VO4-9c-Suk" id="cVN-sc-FDN"/>
+                        <outlet property="nameField" destination="GLn-3r-U8O" id="NZe-c8-7pv"/>
+                        <outlet property="speciesField" destination="tH9-Ac-SrO" id="e0s-9R-dpS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVP-8T-B0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536.8" y="929.68515742128943"/>
+        </scene>
+        <!--Search Monster-->
+        <scene sceneID="q0t-VV-ZLc">
+            <objects>
+                <viewController id="Osg-SW-fUV" customClass="ViewMonsterController" customModule="MonsterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0hw-PB-Gba"/>
+                        <viewControllerLayoutGuide type="bottom" id="F00-qz-f6G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gGY-Pa-k5j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OHG-Cv-5bP">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-zJ-Hhg">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="551" id="nDK-Vz-h1S"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="36" id="vUB-FM-djY" customClass="ItemCell" customModule="MonsterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="36"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vUB-FM-djY" id="Dg0-GX-q2u">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBe-zr-1rm">
+                                                    <rect key="frame" x="15" y="8" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oBe-zr-1rm" firstAttribute="leading" secondItem="Dg0-GX-q2u" secondAttribute="leadingMargin" constant="7" id="8bd-1N-ubG"/>
+                                                <constraint firstItem="oBe-zr-1rm" firstAttribute="top" secondItem="Dg0-GX-q2u" secondAttribute="topMargin" id="Vb2-sz-u08"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="monsterName" destination="oBe-zr-1rm" id="ov3-KR-NLV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yR9-zJ-Hhg" firstAttribute="top" secondItem="OHG-Cv-5bP" secondAttribute="bottom" id="8hc-5T-e2d"/>
+                            <constraint firstItem="yR9-zJ-Hhg" firstAttribute="leading" secondItem="gGY-Pa-k5j" secondAttribute="leading" id="FmY-Xs-UZF"/>
+                            <constraint firstItem="yR9-zJ-Hhg" firstAttribute="bottom" secondItem="F00-qz-f6G" secondAttribute="top" id="J54-EY-oC4"/>
+                            <constraint firstItem="yR9-zJ-Hhg" firstAttribute="leading" secondItem="OHG-Cv-5bP" secondAttribute="leading" id="Lad-j6-DWx"/>
+                            <constraint firstAttribute="trailing" secondItem="yR9-zJ-Hhg" secondAttribute="trailing" id="Nh6-c0-AUi"/>
+                            <constraint firstItem="yR9-zJ-Hhg" firstAttribute="trailing" secondItem="OHG-Cv-5bP" secondAttribute="trailing" id="bvb-Js-zRK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Monster" id="Dlk-W4-l0l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GkP-gM-RFH">
+                            <connections>
+                                <segue destination="e3v-Ya-RAy" kind="show" identifier="ItemDetailsVCNew" id="RYI-Fl-Cts"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="yR9-zJ-Hhg" id="DvW-Kg-ATY"/>
+                        <segue destination="e3v-Ya-RAy" kind="show" identifier="ItemDetailsVC" id="KcT-1t-mCX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8w-Qs-LKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="929.68515742128943"/>
+        </scene>
+        <!--View Monster Controller-->
+        <scene sceneID="7q1-BB-w6G">
+            <objects>
+                <viewController id="NOb-Xn-otk" customClass="ViewMonsterController" customModule="MonsterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oeE-fy-lQC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0KG-OW-kBv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kex-xv-eUG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Monster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S30-kU-x0M">
+                                <rect key="frame" x="135" y="72" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S30-kU-x0M" firstAttribute="centerX" secondItem="Kex-xv-eUG" secondAttribute="centerX" id="OTI-5p-REE"/>
+                            <constraint firstItem="S30-kU-x0M" firstAttribute="top" secondItem="oeE-fy-lQC" secondAttribute="bottom" constant="8" symbolic="YES" id="Psq-9U-lWc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUe-Y7-rni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221.5999999999999" y="929.68515742128943"/>
+        </scene>
+        <!--Darwins Encyclopedia-->
+        <scene sceneID="WZs-gs-EKK">
+            <objects>
+                <navigationController title="Darwins Encyclopedia" automaticallyAdjustsScrollViewInsets="NO" id="ke5-95-dSl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bxF-EH-RbU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NA7-nF-Kr9" kind="relationship" relationship="rootViewController" id="mEJ-7Z-v2R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duj-K7-5iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="154"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KcT-1t-mCX"/>
+    </inferredMetricsTieBreakers>
+</document>
