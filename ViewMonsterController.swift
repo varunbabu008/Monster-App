@@ -9,12 +9,17 @@
 import UIKit
 import CoreData
 
-class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     
     var controller: NSFetchedResultsController<Monsters>!
+   // var filteredController: NSFetchedResultsController<Monsters>!
+    
+    var inSearchMode = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +29,29 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         
         // Do any additional setup after loading the view.
         
         attemptFetch()
     }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        
+//        if searchBar.text == nil || searchBar.text == "" {
+//            
+//            inSearchMode = false
+//        }
+//        else{
+//            
+//            inSearchMode = true
+//            let lower = searchBar.text!.lowercased()
+//            filteredController = controller.object(at: <#T##IndexPath#>)
+//            
+//        }
+//        
+//        
+//    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
