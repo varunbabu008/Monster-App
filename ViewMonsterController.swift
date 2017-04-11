@@ -18,6 +18,9 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     var controller: NSFetchedResultsController<Monsters>!
    // var filteredController: NSFetchedResultsController<Monsters>!
     
+    var monsters = [Monsters]()
+    var fileteredMonsters = [Monsters]()
+    
     var inSearchMode = false
     
     
@@ -34,6 +37,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         
         attemptFetch()
+        getMonsters()
     }
     
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -41,17 +45,34 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
 //        if searchBar.text == nil || searchBar.text == "" {
 //            
 //            inSearchMode = false
+//            tableView.reloadData()
 //        }
 //        else{
 //            
 //            inSearchMode = true
 //            let lower = searchBar.text!.lowercased()
-//            filteredController = controller.object(at: <#T##IndexPath#>)
+//            fileteredMonsters = monsters.filter({$0.name?.range(of: lower) != nil})
+//            tableView.reloadData()
 //            
 //        }
 //        
 //        
 //    }
+//    
+    func getMonsters() -> [Monsters]{
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do{
+            monsters = try context.fetch(request) as! [Monsters]
+        }
+        catch{
+        }
+        
+        return monsters
+    }
+    
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,8 +86,17 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     func configureCell(cell:ItemCell,indexPath: NSIndexPath){
         
         // update cell
-        let item = controller.object(at: indexPath as IndexPath)
-        cell.configureCell(monster: item)
+        
+        if inSearchMode{
+        
+            let item = fileteredMonsters[indexPath.row]
+            //let item = controller.object(at: indexPath as IndexPath)
+            cell.configureCell(monster: item)
+        }
+        else{
+            let item = monsters[indexPath.row]
+            cell.configureCell(monster: item)
+        }
         
     }
     
@@ -81,16 +111,16 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "ItemDetailsVC"{
             if let destination = segue.destination as? ItemDetailsVCViewController{
                 
                 if let item = sender as? Monsters {
                     destination.monsterToEdit = item
                 }
-                
+            }
         }
-    }*/
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
