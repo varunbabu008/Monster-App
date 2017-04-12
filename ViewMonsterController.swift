@@ -18,8 +18,8 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     var controller: NSFetchedResultsController<Monsters>!
    // var filteredController: NSFetchedResultsController<Monsters>!
     
-    var monsters = [Monsters]()
-    var fileteredMonsters = [Monsters]()
+    //var monsters = [Monsters]()
+    //var fileteredMonsters = [Monsters]()
     
     var inSearchMode = false
     
@@ -37,7 +37,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         
         attemptFetch()
-        getMonsters()
+        //getMonsters()
     }
     
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -59,18 +59,18 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
 //        
 //    }
 //    
-    func getMonsters() -> [Monsters]{
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
-        do{
-            monsters = try context.fetch(request) as! [Monsters]
-        }
-        catch{
-        }
-        
-        return monsters
-    }
+//    func getMonsters() -> [Monsters]{
+//        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+//        
+//        do{
+//            monsters = try context.fetch(request) as! [Monsters]
+//        }
+//        catch{
+//        }
+//        
+//        return monsters
+//    }
     
     
     
@@ -87,16 +87,10 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         
         // update cell
         
-        if inSearchMode{
+      
+            let item = controller.object(at: indexPath as IndexPath)
+            cell.configureCell(monster: item)
         
-            let item = fileteredMonsters[indexPath.row]
-            //let item = controller.object(at: indexPath as IndexPath)
-            cell.configureCell(monster: item)
-        }
-        else{
-            let item = monsters[indexPath.row]
-            cell.configureCell(monster: item)
-        }
         
     }
     

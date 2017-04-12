@@ -252,6 +252,9 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="WoV-qb-tep">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CcQ-tn-f7b">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="e3v-Ya-RAy" id="gNB-iY-GJc"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

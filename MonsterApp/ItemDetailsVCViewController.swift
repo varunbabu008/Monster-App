@@ -40,7 +40,18 @@ class ItemDetailsVCViewController: UIViewController {
     
     @IBAction func savePressed(_ sender: UIButton) {
         
-        let monster = Monsters(context:context)
+        //let monster = Monsters(context:context)
+        var monster: Monsters!
+        if monsterToEdit == nil{
+            
+            monster = Monsters(context:context)
+            
+        }
+        else{
+            monster = monsterToEdit
+        }
+        
+        
         
         if let name = nameField.text{
             monster.name = name
@@ -81,7 +92,26 @@ class ItemDetailsVCViewController: UIViewController {
         
         
     }
+    
+    
 
+    @IBAction func deletePressed(_ sender: Any) {
+        
+        if monsterToEdit != nil {
+            
+            context.delete(monsterToEdit!)
+            ad.saveContext()
+        }
+        
+        _ = navigationController?.popViewController(animated: true)
+        
+        
+        
+        
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
