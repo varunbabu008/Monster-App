@@ -18,6 +18,7 @@
 		959E0DE71E6E139E0077EA49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959E0DE61E6E139E0077EA49 /* Assets.xcassets */; };
 		959E0DEA1E6E139E0077EA49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959E0DE81E6E139E0077EA49 /* LaunchScreen.storyboard */; };
 		959E0DF21E6E16600077EA49 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959E0DF11E6E16600077EA49 /* Monster.swift */; };
+		95A15EA51EA2F22D006248E4 /* monsterlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 95A15EA41EA2F22D006248E4 /* monsterlogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		959E0DE91E6E139E0077EA49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		959E0DEB1E6E139E0077EA49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		959E0DF11E6E16600077EA49 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Monster.swift; path = ../Monster.swift; sourceTree = "<group>"; };
+		95A15EA41EA2F22D006248E4 /* monsterlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monsterlogo.png; path = "../../../Documents/sem3/Andrid and IOS/assignments/a2/monsterlogo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,29 @@
 		950A27BC1E9A134D000E6BAA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				959E0DE11E6E139E0077EA49 /* ViewController.swift */,
 				957B17D11E6F9412005A6437 /* ViewMonsterController.swift */,
 				950A27BD1E9A1376000E6BAA /* ItemDetailsVCViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9537A6DF1EA09329002E8DB1 /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95A15EA41EA2F22D006248E4 /* monsterlogo.png */,
+				959E0DE61E6E139E0077EA49 /* Assets.xcassets */,
+				959E0DE81E6E139E0077EA49 /* LaunchScreen.storyboard */,
+			);
+			name = "Suporting Files";
+			sourceTree = "<group>";
+		};
+		9537A6E01EA0935D002E8DB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				959E0DF11E6E16600077EA49 /* Monster.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		959E0DD31E6E139D0077EA49 = {
@@ -86,13 +107,11 @@
 			children = (
 				950A27B71E99E4A1000E6BAA /* Views */,
 				950A27701E99269E000E6BAA /* Model.xcdatamodeld */,
-				959E0DF11E6E16600077EA49 /* Monster.swift */,
+				9537A6E01EA0935D002E8DB1 /* Model */,
 				959E0DDF1E6E139E0077EA49 /* AppDelegate.swift */,
 				950A27BC1E9A134D000E6BAA /* Controllers */,
-				959E0DE11E6E139E0077EA49 /* ViewController.swift */,
 				959E0DE31E6E139E0077EA49 /* Main.storyboard */,
-				959E0DE61E6E139E0077EA49 /* Assets.xcassets */,
-				959E0DE81E6E139E0077EA49 /* LaunchScreen.storyboard */,
+				9537A6DF1EA09329002E8DB1 /* Suporting Files */,
 				959E0DEB1E6E139E0077EA49 /* Info.plist */,
 			);
 			path = MonsterApp;
@@ -160,6 +179,7 @@
 				959E0DEA1E6E139E0077EA49 /* LaunchScreen.storyboard in Resources */,
 				959E0DE71E6E139E0077EA49 /* Assets.xcassets in Resources */,
 				959E0DE51E6E139E0077EA49 /* Main.storyboard in Resources */,
+				95A15EA51EA2F22D006248E4 /* monsterlogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

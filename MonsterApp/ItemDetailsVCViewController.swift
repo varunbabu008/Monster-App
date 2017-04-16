@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// ItemDetailsVCViewController controller handles the update and delete.
 class ItemDetailsVCViewController: UIViewController {
 
     @IBOutlet weak var nameField: UITextField!
@@ -16,6 +18,10 @@ class ItemDetailsVCViewController: UIViewController {
     @IBOutlet weak var healthField: UITextField!
     @IBOutlet weak var attackField: UITextField!
     
+    
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    // used to check if a new monster is to be created or an existing one to be  updated
     var monsterToEdit:  Monsters?
     
     
@@ -31,6 +37,10 @@ class ItemDetailsVCViewController: UIViewController {
         }
         
     }
+    
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,44 +52,66 @@ class ItemDetailsVCViewController: UIViewController {
         
         //let monster = Monsters(context:context)
         var monster: Monsters!
+        
+        // If we press the plus button on top of the search view. We can add a new monster. 
+        // There is no monster to edit because we did not select any row from the tableview
         if monsterToEdit == nil{
             
+            //we get the current context core data
             monster = Monsters(context:context)
             
         }
         else{
             monster = monsterToEdit
         }
-        
-        
-        
-        if let name = nameField.text{
-            monster.name = name
+        // Validation -- Checking if one or more of the text fields are empty. If yes we display a custome error message
+        if(ageField.text != "" && healthField.text != "" && attackField.text != "" && nameField.text! != "" && speciesField.text! != "" ){
+            
+            // If the value entered in the textbox is not a number 
+            if(isStringAnInt(string: ageField.text!) && isStringAnInt(string: healthField.text!) && isStringAnInt(string: attackField.text!)){
+                
+                if let name = nameField.text{
+                    monster.name = name
+                }
+                if let species = speciesField.text{
+                    monster.species = species
+                }
+                
+                if let age = Int16(ageField.text!){
+                    monster.age = age
+                }
+                
+                if let health = Int16(healthField.text!){
+                    monster.health = health
+                }
+                
+                if let attack = Int16(attackField.text!){
+                    monster.attack = attack
+                }
+                
+                // ad is a variable in appDelegate file that we created
+                ad.saveContext()
+                
+                // Will take us back to the previous view after an update or delete is pressed
+                navigationController?.popViewController(animated: true)
+            }
+            else{
+               displayLabel.text = "health, age, attack Power should be an integer"
+            }
         }
-        if let species = speciesField.text{
-            monster.species = species
+        else{
+            
+             displayLabel.text = "Please fill all fields and try again"
         }
 
-        if let age = Int16(ageField.text!){
-            monster.age = age
-        }
-
-        if let health = Int16(healthField.text!){
-            monster.health = health
-        }
-
-        if let attack = Int16(attackField.text!){
-            monster.attack = attack
-        }
         
-        ad.saveContext()
-        // Will take us back to the previous view
-        navigationController?.popViewController(animated: true)
+       
         
         
         
     }
     
+    // populate the textfields
     func loadMonsterData(){
         
         if let monster = monsterToEdit{
@@ -94,7 +126,7 @@ class ItemDetailsVCViewController: UIViewController {
     }
     
     
-
+     // Called when the recycler delete button is pressed.
     @IBAction func deletePressed(_ sender: Any) {
         
         if monsterToEdit != nil {
@@ -103,6 +135,7 @@ class ItemDetailsVCViewController: UIViewController {
             ad.saveContext()
         }
         
+        // Will take us back to the previous view after an update or delete is pressed
         _ = navigationController?.popViewController(animated: true)
         
         

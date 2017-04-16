@@ -14,8 +14,11 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var countMonsters: UILabel!
+    
     
     var controller: NSFetchedResultsController<Monsters>!
+    
    // var filteredController: NSFetchedResultsController<Monsters>!
     
     //var monsters = [Monsters]()
@@ -37,9 +40,10 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         
         attemptFetch()
-        //getMonsters()
+    
     }
     
+    // Search function
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        
 //        if searchBar.text == nil || searchBar.text == "" {
@@ -58,7 +62,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
 //        
 //        
 //    }
-//    
+//    // Gets the current monsters in the database
 //    func getMonsters() -> [Monsters]{
 //        
 //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -73,7 +77,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
 //    }
     
     
-    
+    // START Table view functions
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -83,6 +87,8 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    
+    // Use use this to configure the table view cell which is of type Item Cell
     func configureCell(cell:ItemCell,indexPath: NSIndexPath){
         
         // update cell
@@ -94,6 +100,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    // This function is called when we click on a row in the tableView. We segue to the itemDetails View which shows the full details of the clicked Monster
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let objs = controller.fetchedObjects , objs.count > 0 {
@@ -104,7 +111,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
     }
-    
+    // We also pass in the Current Monster obect when the row is clicked
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if segue.identifier == "ItemDetailsVC"{
             if let destination = segue.destination as? ItemDetailsVCViewController{
@@ -116,17 +123,18 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
+    // Gives us the number of sections in the table View. We also set the label which diplays the count of monsters in here.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let sections = controller.sections{
             let sectionInfo = sections[section]
+            countMonsters.text = "Number of Monsters: " + String(sectionInfo.numberOfObjects)
             return sectionInfo.numberOfObjects
         }
         return 0
     }
     
-    
+    // Gives us the number of rows in a secion
     func numberOfSections(in tableView: UITableView) -> Int {
         
         if let sections = controller.sections{
@@ -143,6 +151,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     func attemptFetch(){
         
         let fetchRequest: NSFetchRequest<Monsters> = Monsters.fetchRequest()
+        // sorting by name
         let nameSort = NSSortDescriptor(key:"name",ascending: true)
         fetchRequest.sortDescriptors = [nameSort]
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -162,7 +171,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    
+    // Updates to core data are handled using the tableView
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -172,7 +181,7 @@ class ViewMonsterController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    
+    // All the insert,delete,update and move are handled by the tableView. We do not make use of move here
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch(type){
         case.insert:

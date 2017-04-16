@@ -9,11 +9,15 @@
 import UIKit
 
 class Monster: NSObject {
+    
+    // Attributes
     private var _name:String
     private var _age:Int
     private var _species:String
     private var _health:Int
     private var _attack:Int
+    
+    // START Accessors and Mutators
     var name:String?{
         get{
             //return self.name
@@ -60,7 +64,10 @@ class Monster: NSObject {
             _attack = newAttack!
         }
     }
+   // End Accessors and Mutuators
     
+
+    // START Constructors
     
     override init(){
        
@@ -71,6 +78,7 @@ class Monster: NSObject {
         _health = 0
     }
     
+
     init(name:String, age:Int, species:String, attack:Int, health:Int) {
        
         _name = name
@@ -79,6 +87,8 @@ class Monster: NSObject {
         _attack = attack
         _health = health
     }
+    
+    // END Consutrucotrs
 }
 
 

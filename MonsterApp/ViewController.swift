@@ -19,9 +19,11 @@ class ViewController: UIViewController {
     
     @IBOutlet var MonsterSpecies: UITextField!
     
-    @IBOutlet var MonsterAttack: UITextField!
+
+    @IBOutlet weak var MonsterAttack: UITextField!
     
-    @IBOutlet var MonsterHealth: UITextField!
+    @IBOutlet weak var MonsterHealth: UITextField!
+
     
     @IBOutlet var displayLabel: UILabel!
    
@@ -48,62 +50,74 @@ class ViewController: UIViewController {
    
     @IBAction func SaveButton(_ sender: Any) {
         
-        let monAge:Int = Int(MonsterAge.text!)!
-        let monHealth:Int = Int(MonsterHealth.text!)!
-        let monAttack:Int = Int(MonsterAttack.text!)!
-        let monName:String = MonsterName.text!
-        let monSpecies:String = MonsterSpecies.text!
+        
         if(MonsterAge.text != "" && MonsterHealth.text != "" && MonsterAttack.text != "" && MonsterName.text! != "" && MonsterSpecies.text! != "" ){
-            newMonster = Monster(name: monName, age:monAge, species: monSpecies, attack: monAttack, health: monHealth)
             
-            displayLabel.text = "Monster Created with \("\n")Name : \(monName)\("\n")Age : \(monAge)\("\n")Species : \(monSpecies) \("\n")Attack power : \(monAttack) \("\n")Health : \(monHealth)"
+            if(isStringAnInt(string: MonsterAge.text!) && isStringAnInt(string: MonsterHealth.text!) && isStringAnInt(string: MonsterAttack.text!)){
 
-           //displayLabel.text = "Monster saved"
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
             
-            let newMonsterD = NSEntityDescription.insertNewObject(forEntityName: "Monsters", into: context)
-            newMonsterD.setValue(monAge, forKey:"age")
-            newMonsterD.setValue(MonsterName.text, forKey:"name")
-            newMonsterD.setValue(MonsterSpecies.text, forKey:"species")
-            newMonsterD.setValue(monHealth, forKey:"health")
-            newMonsterD.setValue(monAttack, forKey:"attack")
             
-            do{
-                try context.save()
+            
+                let monAge:Int = Int(MonsterAge.text!)!
+                let monHealth:Int = Int(MonsterHealth.text!)!
+                let monAttack:Int = Int(MonsterAttack.text!)!
+                let monName:String = MonsterName.text!
+                let monSpecies:String = MonsterSpecies.text!
+                newMonster = Monster(name: monName, age:monAge, species: monSpecies, attack: monAttack, health: monHealth)
+            
+                displayLabel.text = "Monster Created with \("\n")Name : \(monName)\("\n")Age : \(monAge)\("\n")Species : \(monSpecies) \("\n")Attack power : \(monAttack) \("\n")Health : \(monHealth)"
+
+                //displayLabel.text = "Monster saved"
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+            
+                let newMonsterD = NSEntityDescription.insertNewObject(forEntityName: "Monsters", into: context)
+                newMonsterD.setValue(monAge, forKey:"age")
+                newMonsterD.setValue(MonsterName.text, forKey:"name")
+                newMonsterD.setValue(MonsterSpecies.text, forKey:"species")
+                newMonsterD.setValue(monHealth, forKey:"health")
+                newMonsterD.setValue(monAttack, forKey:"attack")
+            
+                do{
+                    try context.save()
                 
-            }
-            catch{
-                print("There was an error saving object")
-            }
+                }
+                catch{
+                    print("There was an error saving object")
+                }
             
-            let request  = NSFetchRequest<NSFetchRequestResult>(entityName: "Monsters")
-            request.returnsObjectsAsFaults = false
-            do{
-                let results = try context.fetch(request)
-                if results.count > 0 {
+                let request  = NSFetchRequest<NSFetchRequestResult>(entityName: "Monsters")
+                request.returnsObjectsAsFaults = false
+                do{
+                    let results = try context.fetch(request)
+                    if results.count > 0 {
                     
-                    for result in results as! [NSManagedObject]{
+                        for result in results as! [NSManagedObject]{
                         
-                        if let name = result.value(forKey: "name") as? String{
-                            print(name)
+                            if let name = result.value(forKey: "name") as? String{
+                                print(name)
+                            }
                         }
-                    }
                     
-                }
-                else{
-                    print("No results")
-                }
+                    }
+                    else{
+                        print("No results")
+                    }
                 
+                }
+            
+                catch{
+                    print("Coudnt fetch results")
+                }
             }
-            
-            catch{
-                print("Coudnt fetch results")
+            else{
+                displayLabel.text = "Please enter an integer value for age, health and attack power"
             }
-            
-            
+           
             
         }
+        
+    
         else{
              displayLabel.text = "You did not enter value for atleast one field"
         }
@@ -117,6 +131,11 @@ class ViewController: UIViewController {
             
         }
     }
+    //To check if an entered String is a number
+    func isStringAnInt(string: String) -> Bool {
+        return Int(string) != nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+// We create an variable so that we can access the database anywhere in the application for later use. This can save us a lot of time we would have spent typing
 let ad = UIApplication.shared.delegate as! AppDelegate
 let context = ad.persistentContainer.viewContext
 
